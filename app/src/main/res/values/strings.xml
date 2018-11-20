@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ecopilas</string>
+    <string name="nombre">Escribe tu nombre:</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="button">Button</string>
+    <string name="texto_corporativo">La Fundación Ecopilas es un Sistema Colectivo de Responsabilidad Ampliada del Productor para la gestión los residuos de pilas y baterías, constituida en el año 2000 por los principales fabricantes e importadores de pilas que tenía por objetivo la correcta gestión…</string>
+    <string name="permission_location_rationale">La aplicacion necesita permisos.</string>
+    <string name="texto_contacto">Datos de contacto \nSolicitud de recogida de pilas y baterías</string>
+    <string name="telefono">914 170 890</string>
+    <string name="_914_170_890">914 170 890</string>
+</resources>

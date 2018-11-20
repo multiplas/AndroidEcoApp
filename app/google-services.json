@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "179390670702",
+    "firebase_url": "https://ecopilas-eae29.firebaseio.com",
+    "project_id": "ecopilas-eae29",
+    "storage_bucket": "ecopilas-eae29.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179390670702:android:5775f036a5779057",
+        "android_client_info": {
+          "package_name": "es.ecopilas.ecopilas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "179390670702-v72sesgstlq2ipmq90j1cnb4k7ro9d87.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "es.ecopilas.ecopilas",
+            "certificate_hash": "b3b61fd9ae78ecb61aef3ff816d168b9503aa2b9"
+          }
+        },
+        {
+          "client_id": "179390670702-el2uh5favem61ionj9nutp66ha4grl7p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF_ieqQw2zxAJbqSpP6Io1D90EuFBjSs8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "179390670702-el2uh5favem61ionj9nutp66ha4grl7p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
