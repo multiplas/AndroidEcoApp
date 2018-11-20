@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView image;
     TextView textoLoading;
     int truncate = 0;
-    RelativeLayout layoutPortada, layoutContacto;
+    RelativeLayout layoutPortada;
     private String mGeolocationOrigin;
     private GeolocationPermissions.Callback mGeolocationCallback;
     private static final int RP_ACCESS_LOCATION = 1;
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     LocationManager locationManager;
     String provider;
     boolean webCargada = false;
+    //Intent intent = getIntent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,27 +65,50 @@ public class MainActivity extends AppCompatActivity {
         textoLoading = (TextView) findViewById(R.id.textoLoading);
         web = (WebView)findViewById(R.id.ecopilasWeb);
         layoutPortada = (RelativeLayout) findViewById(R.id.rootRL);
-        layoutContacto = (RelativeLayout) findViewById(R.id.contacto);
 
         //Colores de los loadings
         progressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor("#1a693b"), android.graphics.PorterDuff.Mode.MULTIPLY);
         progressBar2.getIndeterminateDrawable().setColorFilter(Color.parseColor("#1a693b"), android.graphics.PorterDuff.Mode.MULTIPLY);
 
         //Acciones al inicio
-        //ocultarWeb();
         ocultarAditivos();
         ocultarBarra2();
-        //mostrarBarra();
-        //mostrarPortada();
 
         //Necesitamos los permisos para acceder a la ubicación
         checkLocationPermission();
 
         //Cargamos la vista Web
-        web.setWebChromeClient(new WebChromeClient());
+        web.setWebChromeClient(new MyWebChromeClient());
         web.getSettings().setJavaScriptEnabled(true);
         web.getSettings().setGeolocationEnabled(true);
-        //web.setWebViewClient(new MyWebViewClient());
+        web.setWebViewClient(new MyWebViewClient());
+        if(getIntent() != null && getIntent().getExtras() != null) {
+            //Recupera la información pasada en el Intent
+            Bundle bundle = this.getIntent().getExtras();
+
+            //Construimos el mensaje a mostrar
+            // txtSaludo.setText("Hola " + bundle.getString("NOMBRE"));
+            if (bundle != null) {
+                if (bundle.containsKey("BOTON")) {
+                    int botonClicado = bundle.getInt("BOTON");
+                    if (botonClicado == 2) {
+                        ocultarWeb();
+                        mostrarPortada();
+                    } else if (botonClicado == 3) {
+                        ocultarPortada();
+                        if (webCargada == false) {
+                            web.setWebViewClient(new MyWebViewClient());
+                            web.loadUrl("https://www.ecopilas.es/app/");
+                            webCargada = true;
+                        } else {
+                            mostrarWeb();
+                        }
+                    }
+                }
+            }
+        }
+
+
 
     }
 
@@ -155,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
-        String permissions[], int[] grantResults) {
+                                           String permissions[], int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_LOCATION: {
                 // If request is cancelled, the result arrays are empty.
@@ -187,18 +211,17 @@ public class MainActivity extends AppCompatActivity {
     public void buttonClick(View v) {
         switch (v.getId()) {
             case R.id.button1:
-               ocultarWeb();
-               ocultarPortada();
-               mostrarContacto();
-                break;
+               /*ocultarWeb();
+               ocultarPortada();*/
+                Intent SaludoActivity = new Intent(getApplicationContext(), SaludoActivity.class);
+                startActivity(SaludoActivity);
+               break;
             case R.id.button2:
                 ocultarWeb();
-                ocultarContacto();
                 mostrarPortada();
                 break;
             case R.id.button3:
                 ocultarPortada();
-                ocultarContacto();
                 if(webCargada == false){
                     web.setWebViewClient(new MyWebViewClient());
                     web.loadUrl("https://www.ecopilas.es/app/");
@@ -276,14 +299,6 @@ public class MainActivity extends AppCompatActivity {
     }
     public void ocultarPortada(){
         layoutPortada.setVisibility(View.INVISIBLE);
-    }
-
-    public void mostrarContacto(){
-        layoutContacto.setVisibility(View.VISIBLE);
-    }
-
-    public void ocultarContacto(){
-        layoutContacto.setVisibility(View.INVISIBLE);
     }
 
     private class MyWebChromeClient extends WebChromeClient{
