@@ -100,7 +100,7 @@
         android:layout_height="fill_parent"
         android:background="@drawable/abstract_background"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="invisible">
 
         <TextView
             android:id="@+id/textView"
@@ -165,6 +165,112 @@
             android:textColor="#ffffff" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/cover2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible"
+        android:padding="10dp"
+        android:background="@color/backgroundcolor">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:gravity="top"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/circulopurpura"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_desktop_windows_black_24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Web"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/lightgray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Página web de Ecopilas"
+                        android:textColor="@color/deerpurple" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/circuloverde"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_phone_black_24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Llámanos"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/lightgray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="914 170 890"
+                        android:textColor="@color/green" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </RelativeLayout>
 
