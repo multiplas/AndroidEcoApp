@@ -3,7 +3,8 @@
     <string name="nombre">Escribe tu nombre:</string>
     <string name="aceptar">Aceptar</string>
     <string name="button">Button</string>
-    <string name="texto_corporativo">La Fundación Ecopilas es un Sistema Colectivo de Responsabilidad Ampliada del Productor para la gestión los residuos de pilas y baterías, constituida en el año 2000 por los principales fabricantes e importadores de pilas que tenía por objetivo la correcta gestión…</string>
+    <string name="texto_corporativo">Asociación que agrupa a los 16 sistemas  colectivos de gestión más importantes de la UE, con 35.500 puntos de recogida y 40.000 contenedores repartidos por toda la geografía nacional.</string>
+    <string name="titulo_corporativo">La segunda red de puntos de recogida de pilas más amplia de Europa</string>
     <string name="permission_location_rationale">La aplicacion necesita permisos.</string>
     <string name="texto_contacto">Datos de contacto \nSolicitud de recogida de pilas y baterías</string>
     <string name="telefono">914 170 890</string>

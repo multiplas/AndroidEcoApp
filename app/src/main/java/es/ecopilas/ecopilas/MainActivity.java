@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -61,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
         boton1 = (Button) findViewById(R.id.button1);
         boton2 = (Button) findViewById(R.id.button2);
         boton3 = (Button) findViewById(R.id.button3);
-        image = (ImageView) findViewById(R.id.imageView);
         textoLoading = (TextView) findViewById(R.id.textoLoading);
         web = (WebView)findViewById(R.id.ecopilasWeb);
         layoutPortada = (RelativeLayout) findViewById(R.id.rootRL);
@@ -107,9 +107,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-
-
-
     }
 
     private WebChromeClient mWebChromeClient = new WebChromeClient() {
@@ -233,6 +230,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+
+
 
     @Override
     public void onBackPressed() {
